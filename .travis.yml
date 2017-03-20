@@ -1,0 +1,15 @@
+---
+language: go
+sudo: required
+env:
+  matrix:
+  - OS_TYPE=centos OS_VERSION=7
+go:
+  - 1.7.x
+  - 1.8.x
+  - master
+os:
+  - linux
+script:
+  - go test -v -race ./...
+  - tools/Test-CentOS7/pgCentOS7.sh
